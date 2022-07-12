@@ -32,7 +32,8 @@ Output:
 {
   "jobRunID": 0,
   "data": {
-    "mnemonic": "blur arrest engage lyrics tent patch south wall sketch cloth security shock","address": "yLndbTmXddQGPrTyjthS28Ro7vqtJmCNb2"
+    "mnemonic": "blur arrest engage lyrics tent patch south wall sketch cloth security shock",
+    "address": "yLndbTmXddQGPrTyjthS28Ro7vqtJmCNb2"
     },
   "statusCode": 200
 }
