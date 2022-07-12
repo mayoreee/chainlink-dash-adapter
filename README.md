@@ -23,14 +23,14 @@ yarn start
 This example request for `createWallet` method returns a Dash wallet:
 
 ```bash
-curl -X POST -H "content-type:application/json" "http://localhost:8080/" --data '{ "id": 0, "data": { "network": "testnet", "method": "createWallet" } }'
+curl -X POST -H "content-type:application/json" "http://localhost:8080/" --data '{ "id": 12345, "data": { "network": "testnet", "method": "createWallet" } }'
 ```
 
 Output:
 
 ```json
 {
-  "jobRunID": 0,
+  "jobRunID": 12345,
   "data": {
     "mnemonic": "blur arrest engage lyrics tent patch south wall sketch cloth security shock",
     "address": "yLndbTmXddQGPrTyjthS28Ro7vqtJmCNb2"
@@ -44,7 +44,7 @@ Output:
 If you wish to use Docker to run the adapter, you can build the image by running the following command:
 
 ```bash
-docker build . -t chainlink-dash-adapter
+docker build -t chainlink-dash-adapter .
 ```
 
 Then run it with:

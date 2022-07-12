@@ -1,4 +1,4 @@
-const { AdapterError } = require('@chainlink/external-adapter/src/adapterError')
+const { AdapterError } = require('@chainlink/external-adapter/src/errors')
 const { logger } = require('@chainlink/external-adapter/src/logger')
 const { createDashWallet } = require('./methods/createDashWallet')
 
@@ -24,6 +24,7 @@ class Requester {
 
     return new Promise((resolve, reject) => {
       const retry = (config, n) => {
+        console.log('my config, ', config)
         return makeRequest(config)
           .then(response => {
             if (response.data.error || customError(response.data)) {

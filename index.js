@@ -20,7 +20,7 @@ const customParams = {
 
 const createRequest = (input, callback) => {
   // The Validator helps you validate the Chainlink request data
-  const validator = new Validator(callback, input, customParams)
+  const validator = new Validator(input, customParams)
   const jobRunID = validator.validated.id
   const network = validator.validated.data.network
   const method = validator.validated.data.method
@@ -29,6 +29,7 @@ const createRequest = (input, callback) => {
     network,
     method
   }
+  console.log('my config 2, ', config)
 
   // The Requester allows API calls be retry in case of timeout
   // or connection failure
