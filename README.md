@@ -50,5 +50,5 @@ docker build . -t chainlink-dash-adapter
 Then run it with:
 
 ```bash
-docker run -p 8080:8080 -it chainlink-dash-adapter:latest
+docker run -p 8080:8080 chainlink-dash-adapter
 ```
