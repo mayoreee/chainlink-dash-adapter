@@ -14,6 +14,8 @@ describe('createRequest', () => {
       { name: 'retrieveIdentity test - id supplied', testData: {id: jobID, data: { network: 'testnet', method: 'retrieveIdentity', params:{ identityId: '3GVAAkyWDK68V92Evy4jrnYyBJamri8bXQakWbMedr93'} } } },
       { name: 'topupIdentity test - id not supplied', testData: { data: { network: 'testnet', method: 'topupIdentity', params: { identityId: '3GVAAkyWDK68V92Evy4jrnYyBJamri8bXQakWbMedr93', topupAmount: 1000 }, wallet: { mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
       { name: 'topupIdentity test - id supplied', testData: {id: jobID, data: { network: 'testnet', method: 'topupIdentity', params:{ identityId: '3GVAAkyWDK68V92Evy4jrnYyBJamri8bXQakWbMedr93', topupAmount: 1000}, wallet: { mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
+      { name: 'retrieveIdentityIds test - id not supplied', testData: { data: { network: 'testnet', method: 'retrieveIdentityIds',  wallet: { mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } }},
+      { name: 'retrieveIdentityIds test - id supplied', testData: {id: jobID, data: { network: 'testnet', method: 'retrieveIdentityIds',  wallet: { mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } }},
     ]
 
     requests.forEach(req => {
@@ -36,7 +38,7 @@ describe('createRequest', () => {
       { name: 'createWallet test - method not supplied', testData: { id: jobID, data: { network: 'testnet' } } },
       { name: 'registerIdentity test - network not supplied', testData: { id: jobID, data: { method: 'registerIdentity', wallet: { mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
       { name: 'registerIdentity test - method not supplied', testData: { id: jobID, data: { network: 'testnet', wallet: { mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
-      { name: 'registerIdentity test - mnemonic not supplied', testData: { id: jobID, data: { network: 'testnet' }, wallet:{} } },
+      { name: 'registerIdentity test - mnemonic not supplied', testData: { id: jobID, data: {method: 'registerIdentity', network: 'testnet' }, wallet:{} } },
       { name: 'retrieveIdentity test - network not supplied', testData: { id: jobID, data: { method: 'retrieveIdentity', params: { identityId: '3GVAAkyWDK68V92Evy4jrnYyBJamri8bXQakWbMedr93'} } } },
       { name: 'retrieveIdentity test - method not supplied', testData: { id: jobID, data: { network: 'testnet', params: { identityId: '3GVAAkyWDK68V92Evy4jrnYyBJamri8bXQakWbMedr93'} } } },
       { name: 'retrieveIdentity test - identityId not supplied', testData: { id: jobID, data: { network: 'testnet', method: 'retrieveIdentity'} } },
@@ -44,6 +46,7 @@ describe('createRequest', () => {
       { name: 'topupIdentity test - method not supplied', testData: { id: jobID, data: { network: 'testnet', params: { identityId: '3GVAAkyWDK68V92Evy4jrnYyBJamri8bXQakWbMedr93', topupAmount: 1000}, wallet: { mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
       { name: 'topupIdentity test - identityId not supplied', testData: { id: jobID, data: { network: 'testnet', method: 'topupIdentity', params: { topupAmount: 1000}, wallet: { mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
       { name: 'topupIdentity test - topupAmount not supplied', testData: { id: jobID, data: { network: 'testnet', method: 'topupIdentity', params: { identityId: '3GVAAkyWDK68V92Evy4jrnYyBJamri8bXQakWbMedr93'}, wallet: { mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } }},
+      { name: 'registerIdentityIds test - mnemonic not supplied', testData: { id: jobID, data: { network: 'testnet', method: 'registerIdentityIds', }, wallet:{} } },
     ]
 
     requests.forEach(req => {
