@@ -7,7 +7,9 @@ describe('createRequest', () => {
   context('successful calls', () => {
     const requests = [
       { name: 'createWallet test - id not supplied', testData: { data: { network: 'testnet', method: 'createWallet' } } },
-      { name: 'createWallet test - id supplied', testData: { id: jobID, data: { network: 'testnet', method: 'createWallet' } } }
+      { name: 'createWallet test - id supplied', testData: { id: jobID, data: { network: 'testnet', method: 'createWallet' } } },
+      { name: 'registerIdentity test - id not supplied', testData: { data: { network: 'testnet', method: 'registerIdentity', wallet: {mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
+      { name: 'registerIdentity test - id supplied', testData: {id: jobID, data: { network: 'testnet', method: 'registerIdentity', wallet: {mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
     ]
 
     requests.forEach(req => {
@@ -27,7 +29,10 @@ describe('createRequest', () => {
       { name: 'empty body', testData: {} },
       { name: 'empty data', testData: { data: {} } },
       { name: 'createWallet test - network not supplied', testData: { id: jobID, data: { method: 'createWallet' } } },
-      { name: 'createWallet test - method not supplied', testData: { id: jobID, data: { network: 'testnet' } } }
+      { name: 'createWallet test - method not supplied', testData: { id: jobID, data: { network: 'testnet' } } },
+      { name: 'registerIdentity test - network not supplied', testData: { id: jobID, data: { method: 'registerIdentity', wallet: {mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
+      { name: 'registerIdentity test - method not supplied', testData: { id: jobID, data: { network: 'testnet', wallet: {mnemonic: "bulk chimney foam muscle detail matter snake purchase science exile upon marriage where history notice antique arm lawn upgrade hope athlete foam hidden false"} } } },
+      { name: 'registerIdentity test - mnemonic not supplied', testData: { id: jobID, data: { network: 'testnet' }, wallet:{} } },
     ]
 
     requests.forEach(req => {
