@@ -15,7 +15,8 @@ const customError = (data) => {
 const customParams = {
   network: true, // e.g. 'testnet'
   method: true, // e.g 'createWallet'
-  endpoint: false
+  wallet: false, // e.g { mnemonic: 'a Dash wallet mnemonic with testnet funds goes here'}
+  endpoint: false,
 }
 
 const createRequest = (input, callback) => {
@@ -24,12 +25,13 @@ const createRequest = (input, callback) => {
   const jobRunID = validator.validated.id
   const network = validator.validated.data.network
   const method = validator.validated.data.method
+  const wallet = validator.validated.data.wallet
 
   const config = {
     network,
-    method
+    method,
+    wallet,
   }
-  console.log('my config 2, ', config)
 
   // The Requester allows API calls be retry in case of timeout
   // or connection failure
