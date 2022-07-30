@@ -3,6 +3,7 @@ const { logger } = require('@chainlink/external-adapter/src/logger')
 const { createDashWallet } = require('./methods/createDashWallet')
 const { registerIdentity } = require('./methods/registerIdentity')
 const { retrieveIdentity } = require('./methods/retrieveIdentity')
+const { retrieveIdentityIds } = require('./methods/retrieveIdentityIds')
 
 class Requester {
   static request (config, customError, retries = 3, delay = 1000) {
@@ -77,6 +78,9 @@ class Requester {
       }
       if (config.method === 'topupIdentity') {
         return retrieveIdentity(config.network, config.wallet, config.params.identityId, config.params.topupAmount)
+      }
+      if (config.method === 'retrieveIdentityIds') {
+        return retrieveIdentityIds(config.network, config.wallet)
       }
     }
   }
