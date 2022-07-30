@@ -73,7 +73,10 @@ class Requester {
         return registerIdentity(config.network, config.wallet)
       }
       if (config.method === 'retrieveIdentity') {
-        return retrieveIdentity(config.network, config.identityId)
+        return retrieveIdentity(config.network, config.params.identityId)
+      }
+      if (config.method === 'topupIdentity') {
+        return retrieveIdentity(config.network, config.wallet, config.params.identityId, config.params.topupAmount)
       }
     }
   }
