@@ -16,8 +16,7 @@ const customParams = {
   network: true, // e.g. 'testnet'
   method: true, // e.g 'createWallet'
   wallet: false, // e.g { mnemonic: 'a Dash wallet mnemonic with testnet funds goes here'}
-  identityId: false, // e.g '3GVAAkyWDK68V92Evy4jrnYyBJamri8bXQakWbMedr93'
-  endpoint: false,
+  params: false, // e.g {identityId: '3GVAAkyWDK68V92Evy4jrnYyBJamri8bXQakWbMedr93', topupAmount: 1000}
 }
 
 const createRequest = (input, callback) => {
@@ -27,13 +26,13 @@ const createRequest = (input, callback) => {
   const network = validator.validated.data.network
   const method = validator.validated.data.method
   const wallet = validator.validated.data.wallet
-  const identityId = validator.validated.data.identityId
+  const params = validator.validated.data.params
 
   const config = {
     network,
     method,
     wallet,
-    identityId,
+    params,
   }
 
   // The Requester allows API calls be retry in case of timeout
