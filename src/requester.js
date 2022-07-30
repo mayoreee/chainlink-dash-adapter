@@ -2,6 +2,7 @@ const { AdapterError } = require('@chainlink/external-adapter/src/errors')
 const { logger } = require('@chainlink/external-adapter/src/logger')
 const { createDashWallet } = require('./methods/createDashWallet')
 const { registerIdentity } = require('./methods/registerIdentity')
+const { retrieveIdentity } = require('./methods/retrieveIdentity')
 
 class Requester {
   static request (config, customError, retries = 3, delay = 1000) {
@@ -70,6 +71,9 @@ class Requester {
       }
       if (config.method === 'registerIdentity') {
         return registerIdentity(config.network, config.wallet)
+      }
+      if (config.method === 'retrieveIdentity') {
+        return retrieveIdentity(config.network, config.identityId)
       }
     }
   }
